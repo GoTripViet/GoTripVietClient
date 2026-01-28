@@ -20,12 +20,12 @@ inventoryClient.interceptors.request.use((config) => {
 const inventoryApi = {
   // 1. Tên hàm mới (Dùng cho Admin)
   getByProductId: (productId) => {
-    return inventoryClient.get(`/product/${productId}`);
+    return inventoryClient.get(`/inventory/product/${productId}`);
   },
 
   // 2. [FIX LỖI] Giữ lại tên hàm cũ (Dùng cho Client/ProductDetail)
   getInventoryByProductId: (productId) => {
-    return inventoryClient.get(`/product/${productId}`);
+    return inventoryClient.get(`/inventory/product/${productId}`);
   },
 
   // POST: Tạo lịch mới
