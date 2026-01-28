@@ -45,29 +45,29 @@ const inventoryApi = {
   },
   // Kiểm tra mã giảm giá
   checkPromotion: (code) => {
-    return inventoryClient.get(`/inventory/promotions/code/${code}`);
+    return inventoryClient.get(`/promotions/code/${code}`);
   },
   // EVENTS (PUBLIC)
   getActiveEvents: () => {
-    return inventoryClient.get(`/inventory/events/active`);
+    return inventoryClient.get(`/events/active`);
   },
   // Lấy chi tiết sự kiện public theo id hoặc slug
   getPublicEventByIdOrSlug: (idOrSlug) => {
-    return inventoryClient.get(`/inventory/events/public/${idOrSlug}`);
+    return inventoryClient.get(`/events/public/${idOrSlug}`);
   },
   // Lấy danh sách tour áp dụng sự kiện public theo id hoặc slug
   getPublicEventTours: (idOrSlug) => {
-    return inventoryClient.get(`/inventory/events/public/${idOrSlug}/tours`);
+    return inventoryClient.get(`/events/public/${idOrSlug}/tours`);
   },
   // Lấy tất cả event trong tháng (theo month 1-12)
   getEventsInMonth: (year, month) => {
-    return inventoryClient.get(`/inventory/events/public/month`, {
+    return inventoryClient.get(`/events/public/month`, {
       params: { year, month },
     });
   },
 
   getActivePromotionsPublic: () => {
-    return inventoryClient.get("/inventory/promotions/public/active");
+    return inventoryClient.get("/promotions/public/active");
   },
 };
 
