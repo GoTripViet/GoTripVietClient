@@ -4,7 +4,7 @@ import axios from "axios";
 // 1. Tạo instance Axios cho Payment Service
 // (Giữ nguyên port 3005 như file bạn gửi)
 const paymentClient = axios.create({
-  baseURL: import.meta.env.VITE_PAYMENT_API_URL || "http://localhost:3005",
+  baseURL: import.meta.env.VITE_PAYMENT_API_URL,
   headers: {
     "Content-Type": "application/json",
   },

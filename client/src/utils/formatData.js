@@ -47,7 +47,7 @@ const resolveProductImageUrl = (product) => {
 
   // Nếu backend lưu đường dẫn uploads nội bộ
   if (raw.startsWith("/uploads") || raw.startsWith("uploads/")) {
-    const base = import.meta.env.VITE_API_URL || "http://localhost:3000";
+    const base = import.meta.env.VITE_API_URL;
     return `${base}${raw.startsWith("/") ? "" : "/"}${raw}`;
   }
 
@@ -79,7 +79,9 @@ export const mapProductToCard = (product) => {
 
     departureDates: product.departure_dates
       ? product.departure_dates
-      : (Array.isArray(product?.tour_details?.departure_times) ? product.tour_details.departure_times : []),
+      : Array.isArray(product?.tour_details?.departure_times)
+        ? product.tour_details.departure_times
+        : [],
     price: product?.base_price || 0,
     originalPrice: (product?.base_price || 0) * 1.2,
   };

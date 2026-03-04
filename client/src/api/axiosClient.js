@@ -4,7 +4,7 @@ const axiosClient = axios.create({
   // LƯU Ý QUAN TRỌNG:
   // - Nếu chạy qua Gateway: dùng port 3000
   // - Nếu chạy thẳng User Service (để test nhanh): dùng port 3001
-  baseURL: import.meta.env.VITE_API_URL || "http://localhost:3000",
+  baseURL: import.meta.env.VITE_API_URL,
 });
 
 // Interceptor: Tự động gắn Token vào mọi request nếu có
@@ -28,7 +28,7 @@ axiosClient.interceptors.response.use(
   (response) => (response && response.data ? response.data : response),
   (error) => {
     throw error;
-  }
+  },
 );
 
 export default axiosClient;

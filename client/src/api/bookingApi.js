@@ -4,7 +4,7 @@ import axios from "axios";
 // 1. Tạo instance Axios riêng cho Booking Service
 // (Booking Service chạy ở port 3004)
 const bookingClient = axios.create({
-  baseURL: import.meta.env.VITE_BOOKING_API_URL || "http://localhost:3004",
+  baseURL: import.meta.env.VITE_BOOKING_API_URL,
   headers: {
     "Content-Type": "application/json",
   },
